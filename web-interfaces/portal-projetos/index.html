@@ -1,0 +1,224 @@
+<!--Alerta: Código em desenvolvimento e construção....-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Projetos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="flex min-h-screen bg-stone-50 dark:bg-neutral-950 transition-colors duration-300">
+
+    <!-- Sidebar: visível só no desktop, fixa durante scroll -->
+    <aside class="hidden md:flex w-20 sticky top-0 h-screen bg-white dark:bg-neutral-900 border-r border-stone-200 dark:border-neutral-800 flex-col items-center py-8 shrink-0">
+        <nav class="flex flex-col items-center space-y-6">
+            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+                <i data-lucide="home"></i>
+                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Início</span>
+            </div>
+            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+                <i data-lucide="folder-kanban"></i>
+                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Projetos</span>
+            </div>
+            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+                <i data-lucide="users"></i>
+                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Alunos</span>
+            </div>
+            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+                <i data-lucide="lightbulb"></i>
+                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Ideias</span>
+            </div>
+            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+                <i data-lucide="badge-info"></i>
+                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Sobre nós</span>
+            </div>
+            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+                <i data-lucide="mails"></i>
+                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Contatos</span>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Barra inferior: visível só no mobile -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-neutral-900 border-t border-stone-200 dark:border-neutral-800 flex justify-around items-center py-2 px-1">
+        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
+            <i data-lucide="home" class="w-5 h-5"></i>
+            <span class="text-[10px]">Início</span>
+        </div>
+        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
+            <i data-lucide="folder-kanban" class="w-5 h-5"></i>
+            <span class="text-[10px]">Projetos</span>
+        </div>
+        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
+            <i data-lucide="users" class="w-5 h-5"></i>
+            <span class="text-[10px]">Alunos</span>
+        </div>
+        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
+            <i data-lucide="lightbulb" class="w-5 h-5"></i>
+            <span class="text-[10px]">Ideias</span>
+        </div>
+        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
+            <i data-lucide="badge-info" class="w-5 h-5"></i>
+            <span class="text-[10px]">Sobre</span>
+        </div>
+        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
+            <i data-lucide="mails" class="w-5 h-5"></i>
+            <span class="text-[10px]">Contato</span>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main class="flex-1 p-6 md:p-12 pb-24 md:pb-12 min-w-0">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Cabeçalho -->
+            <div class="flex justify-between items-start mb-8">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-stone-900 dark:text-neutral-100 mb-2">Projetos de Pesquisa e Extensão</h1>
+                    <h3 class="text-base md:text-lg text-stone-700 dark:text-neutral-300 mb-4">Prof. Roberto de Urzêda Paiva - Curso de Sistemas para Internet – UEG Itaberaí</h3>
+                    <p class="text-stone-600 dark:text-neutral-400 max-w-3xl leading-relaxed text-sm md:text-base">
+                        Espaço dedicado a oportunidades de participação em projetos de pesquisa e extensão, bem como possibilidades de desenvolvimento de projetos individuais e temas de TCC nas áreas de Inteligência Artificial, desenvolvimento de software e análise de dados ambientais.
+                    </p>
+                </div>
+
+                <button id="theme-toggle" aria-label="Alternar modo de cores" class="p-2 rounded-lg bg-white dark:bg-neutral-900 border border-stone-300 dark:border-neutral-700 hover:bg-stone-100 dark:hover:bg-neutral-800 transition-colors shrink-0 ml-4">
+                    <i data-lucide="sun" class="hidden dark:block w-5 h-5 text-neutral-300"></i>
+                    <i data-lucide="moon" class="dark:hidden w-5 h-5 text-stone-600"></i>
+                </button>
+            </div>
+
+            <!-- Seção: Projetos de Pesquisa -->
+            <section class="mb-12">
+                <h2 class="text-xl font-bold text-stone-900 dark:text-neutral-100 mb-6 flex items-center gap-2">
+                    <i data-lucide="microscope" class="w-5 h-5"></i> Projetos de Pesquisa
+                </h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                    <article class="flex flex-col bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-stone-200 dark:border-neutral-800 shadow-sm hover:shadow-lg transition-shadow duration-200 space-y-4">
+                        <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100 pr-4">
+                            Modelagem Multissensores de Estoques de Carbono em Áreas de Restauração no Brasil com Sensoriamento Remoto e Inteligência Artificial
+                        </h3>
+                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed flex-grow">
+                            Desenvolver modelos de estimativa de carbono acima do solo em áreas de restauração ecológica utilizando dados de sensoriamento remoto multissensor (satélites, radar, etc.) combinados com técnicas de inteligência artificial.
+                        </p>
+                        <div class="flex gap-2 mt-auto pt-4 flex-wrap">
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Pesquisa</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">IA</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Sensoriamento Remoto</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Dados Ambientais</span>
+                        </div>
+                    </article>
+
+                    <article class="flex flex-col bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-stone-200 dark:border-neutral-800 shadow-sm hover:shadow-lg transition-shadow duration-200 space-y-4">
+                        <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100 pr-4">
+                            Algoritmos em R para Monitoramento Ambiental: Automação de Fluxos de Dados e Desenvolvimento de Materiais para Transferência Tecnológica
+                        </h3>
+                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed flex-grow">
+                            Desenvolver algoritmos e pipelines automatizados em linguagem R para processamento de dados ambientais, além da produção de materiais de transferência tecnológica.
+                        </p>
+                        <div class="flex gap-2 mt-auto pt-4 flex-wrap">
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Pesquisa</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Linguagem em R</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Automação</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Dados Ambientais</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <div class="relative py-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-stone-200 dark:border-neutral-800"></div>
+                </div>
+            </div>
+
+            <!-- Seção: Projetos de Extensão -->
+            <section class="mb-12">
+                <h2 class="text-xl font-bold text-stone-900 dark:text-neutral-100 mb-6 flex items-center gap-2">
+                    <i data-lucide="handshake" class="w-5 h-5"></i> Projetos de Extensão
+                </h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                    <article class="flex flex-col bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-stone-200 dark:border-neutral-800 shadow-sm hover:shadow-lg transition-shadow duration-200 space-y-4">
+                        <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100">Mapeando a Cidade</h3>
+                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed flex-grow">
+                            Construção colaborativa de mapas digitais de cidades turísticas, integrando informações culturais, históricas e geográficas utilizando plataformas de mapeamento digital.
+                        </p>
+                        <div class="flex gap-2 mt-4 flex-wrap">
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Extensão</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Mapeamento Web</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Tratamento de Dados</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Dados Geoespaciais</span>
+                        </div>
+                    </article>
+
+                    <article class="flex flex-col bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-stone-200 dark:border-neutral-800 shadow-sm hover:shadow-lg transition-shadow duration-200 space-y-4">
+                        <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100">Chatbot com IA para a Plataforma "LAPIG na Escola"</h3>
+                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed flex-grow">
+                            Criar um chatbot com Inteligência Artificial integrado à plataforma educacional do LAPIG, permitindo facilitar o acesso a conteúdos educacionais sobre geografia, sensoriamento remoto e meio ambiente.
+                        </p>
+                        <div class="flex gap-2 mt-4 flex-wrap">
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Extensão</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">IA</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Chatbots</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Tecnologias Educacionais</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <div class="relative py-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-stone-200 dark:border-neutral-800"></div>
+                </div>
+            </div>
+
+            <!-- Seção: Projetos Externos -->
+            <section class="mb-12">
+                <h2 class="text-xl font-bold text-stone-900 dark:text-neutral-100 mb-6 flex items-center gap-2">
+                    <i data-lucide="door-open" class="w-5 h-5"></i> Projetos Externos
+                </h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+
+                    <article class="flex flex-col bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-stone-200 dark:border-neutral-800 shadow-sm hover:shadow-lg transition-shadow duration-200 space-y-4">
+                        <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100">Plataforma LAPIG na Escola</h3>
+                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed flex-grow">
+                            Projeto consolidado na Universidade Federal de Goiás, que necessita de estudantes interessados em manutenção, atualização e evolução da plataforma.
+                        </p>
+                        <div class="flex gap-2 mt-4 flex-wrap">
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Externo</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Full Stack</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Engenharia de Software</span>
+                            <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Integração Contínua</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <footer class="mt-8 pt-6 border-t border-stone-200 dark:border-neutral-800 text-center text-xs text-stone-400 dark:text-neutral-600">
+                <p>© <span id="footer-year"></span> J. M. B.  — Universidade Estadual de Goiás - Polo Itaberaí</p>
+            </footer>
+
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        const btn = document.getElementById('theme-toggle');
+        btn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
