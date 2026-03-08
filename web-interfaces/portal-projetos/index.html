@@ -2,46 +2,44 @@
 <!--https://joohoh.github.io/Projetos-UEG/web-interfaces/portal-projetos/-->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<!-- Este arquivo é o modelo base para as páginas do portal. Ele inclui a estrutura de navegação, o layout geral e os estilos comuns. As páginas específicas (projetos.html, ideias.html, etc.) devem preencher o conteúdo principal dentro da tag <main>. --> 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Projetos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = { darkMode: 'class' }
+
+    <meta charset="UTF-8"> <!-- Configuração de charset para suporte a caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuração de viewport para responsividade em dispositivos móveis -->
+    
+    <title>Portal de Projetos</title> <!-- Título da página que aparece na aba do navegador -->
+   
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Inclusão do Tailwind CSS via CDN para estilização rápida e responsiva -->
+    
+    <!-- Configuração do Tailwind CSS para modo escuro -->
+    <script> 
+        tailwind.config = { darkMode: 'class' }    
     </script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Inclusão do Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script> 
 </head>
 
+<!-- Conteúdo principal da página -->
 <body class="flex min-h-screen bg-stone-50 dark:bg-neutral-950 transition-colors duration-300">
 
-    <!-- Sidebar: visível só no desktop, fixa durante scroll -->
-    <aside class="hidden md:flex w-20 sticky top-0 h-screen bg-white dark:bg-neutral-900 border-r border-stone-200 dark:border-neutral-800 flex-col items-center py-8 shrink-0">
+    <!-- Barra lateral fixa de navegação: visível em telas médias e maiores, foi adicionado Tooltip para cada ícone desse menu -->
+    <aside class="hidden md:flex w-20 sticky top-0 h-screen bg-white dark:bg-neutral-900 border-r border-stone-200 dark:border-neutral-800 flex-col items-center py-8 shrink-0">    
         <nav class="flex flex-col items-center space-y-6">
-            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
-                <i data-lucide="home"></i>
+            <a href="index.html" class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+                <i data-lucide="home"></i> <!-- Busca na biblioteca de ícones -->
                 <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Início</span>
-            </div>
-            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+            </a>
+            <a href="projetos.html" class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
                 <i data-lucide="folder-kanban"></i>
                 <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Projetos</span>
-            </div>
-            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
-                <i data-lucide="users"></i>
-                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Alunos</span>
-            </div>
-            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+            </a>
+            <a href="ideias.html" class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
                 <i data-lucide="lightbulb"></i>
                 <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Ideias</span>
-            </div>
-            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
-                <i data-lucide="badge-info"></i>
-                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Sobre nós</span>
-            </div>
-            <div class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
-                <i data-lucide="mails"></i>
-                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Contatos</span>
-            </div>
+            </a>
         </nav>
     </aside>
 
@@ -56,32 +54,24 @@
             <span class="text-[10px]">Projetos</span>
         </div>
         <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
-            <i data-lucide="users" class="w-5 h-5"></i>
-            <span class="text-[10px]">Alunos</span>
-        </div>
-        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
             <i data-lucide="lightbulb" class="w-5 h-5"></i>
             <span class="text-[10px]">Ideias</span>
-        </div>
-        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
-            <i data-lucide="badge-info" class="w-5 h-5"></i>
-            <span class="text-[10px]">Sobre</span>
-        </div>
-        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
-            <i data-lucide="mails" class="w-5 h-5"></i>
-            <span class="text-[10px]">Contato</span>
         </div>
     </nav>
 
     <!-- Conteúdo principal -->
-    <main class="flex-1 p-6 md:p-12 pb-24 md:pb-12 min-w-0">
-        <div class="max-w-7xl mx-auto">
+    <main class="flex-1 p-6 md:p-12 pb-24 md:pb-12 min-w-0"> <!-- Configuração de padding e flex para ocupar o espaço restante -->
+        <div class="max-w-7xl mx-auto"> <!-- Limita a largura do conteúdo e centraliza -->
 
             <!-- Cabeçalho -->
             <div class="flex justify-between items-start mb-8">
                 <div>
-                    <h1 class="text-2xl md:text-3xl font-bold text-stone-900 dark:text-neutral-100 mb-2">Projetos de Pesquisa e Extensão</h1>
-                    <h3 class="text-base md:text-lg text-stone-700 dark:text-neutral-300 mb-4">Prof. Roberto de Urzêda Paiva - Curso de Sistemas para Internet – UEG Itaberaí</h3>
+                    <h1 class="text-2xl md:text-3xl font-bold text-stone-900 dark:text-neutral-100 mb-2">
+                        Projetos de Pesquisa e Extensão
+                    </h1>
+                    <h3 class="text-base md:text-lg text-stone-700 dark:text-neutral-300 mb-4">
+                        Prof. Roberto de Urzêda Paiva - Curso de Sistemas para Internet – UEG Itaberaí 
+                    </h3>
                     <p class="text-stone-600 dark:text-neutral-400 max-w-3xl leading-relaxed text-sm md:text-base">
                         Espaço dedicado a oportunidades de participação em projetos de pesquisa e extensão, bem como possibilidades de desenvolvimento de projetos individuais e temas de TCC nas áreas de Inteligência Artificial, desenvolvimento de software e análise de dados ambientais.
                     </p>
@@ -104,9 +94,7 @@
                         <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100 pr-4">
                             Modelagem Multissensores de Estoques de Carbono em Áreas de Restauração no Brasil com Sensoriamento Remoto e Inteligência Artificial
                         </h3>
-                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed flex-grow">
-                            Desenvolver modelos de estimativa de carbono acima do solo em áreas de restauração ecológica utilizando dados de sensoriamento remoto multissensor (satélites, radar, etc.) combinados com técnicas de inteligência artificial.
-                        </p>
+                        
                         <div class="flex gap-2 mt-auto pt-4 flex-wrap">
                             <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Pesquisa</span>
                             <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">IA</span>
@@ -119,9 +107,7 @@
                         <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100 pr-4">
                             Algoritmos em R para Monitoramento Ambiental: Automação de Fluxos de Dados e Desenvolvimento de Materiais para Transferência Tecnológica
                         </h3>
-                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed flex-grow">
-                            Desenvolver algoritmos e pipelines automatizados em linguagem R para processamento de dados ambientais, além da produção de materiais de transferência tecnológica.
-                        </p>
+                        
                         <div class="flex gap-2 mt-auto pt-4 flex-wrap">
                             <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Pesquisa</span>
                             <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Linguagem em R</span>
@@ -133,7 +119,7 @@
                 </div>
             </section>
 
-            <div class="relative py-8">
+            <div class="relative pt-0 pb-8">
                 <div class="absolute inset-0 flex items-center">
                     <div class="w-full border-t border-stone-200 dark:border-neutral-800"></div>
                 </div>
@@ -148,9 +134,7 @@
 
                     <article class="flex flex-col bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-stone-200 dark:border-neutral-800 shadow-sm hover:shadow-lg transition-shadow duration-200 space-y-4">
                         <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100">Mapeando a Cidade</h3>
-                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed flex-grow">
-                            Construção colaborativa de mapas digitais de cidades turísticas, integrando informações culturais, históricas e geográficas utilizando plataformas de mapeamento digital.
-                        </p>
+                        
                         <div class="flex gap-2 mt-4 flex-wrap">
                             <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Extensão</span>
                             <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Mapeamento Web</span>
@@ -161,9 +145,7 @@
 
                     <article class="flex flex-col bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-stone-200 dark:border-neutral-800 shadow-sm hover:shadow-lg transition-shadow duration-200 space-y-4">
                         <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100">Chatbot com IA para a Plataforma "LAPIG na Escola"</h3>
-                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed flex-grow">
-                            Criar um chatbot com Inteligência Artificial integrado à plataforma educacional do LAPIG, permitindo facilitar o acesso a conteúdos educacionais sobre geografia, sensoriamento remoto e meio ambiente.
-                        </p>
+                        
                         <div class="flex gap-2 mt-4 flex-wrap">
                             <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Extensão</span>
                             <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">IA</span>
@@ -175,7 +157,7 @@
                 </div>
             </section>
 
-            <div class="relative py-8">
+            <div class="relative pt-0 pb-8">
                 <div class="absolute inset-0 flex items-center">
                     <div class="w-full border-t border-stone-200 dark:border-neutral-800"></div>
                 </div>
@@ -190,9 +172,7 @@
 
                     <article class="flex flex-col bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-stone-200 dark:border-neutral-800 shadow-sm hover:shadow-lg transition-shadow duration-200 space-y-4">
                         <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100">Plataforma LAPIG na Escola</h3>
-                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed flex-grow">
-                            Projeto consolidado na Universidade Federal de Goiás, que necessita de estudantes interessados em manutenção, atualização e evolução da plataforma.
-                        </p>
+
                         <div class="flex gap-2 mt-4 flex-wrap">
                             <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Externo</span>
                             <span class="px-3 py-1 bg-stone-100 dark:bg-neutral-800 text-stone-600 dark:text-neutral-400 text-xs font-medium rounded-full">Full Stack</span>
@@ -211,6 +191,7 @@
         </div>
     </main>
 
+    <!-- Scripts para inicialização de ícones e funcionalidade de alternância de tema -->
     <script>
         lucide.createIcons();
         document.getElementById('footer-year').textContent = new Date().getFullYear();
