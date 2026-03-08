@@ -11,7 +11,7 @@ Abaixo estão os projetos organizados por tecnologia e natureza:
 
 | Nome do Projeto | Linguagem/Stack | Tipo | Status |
 | :--- | :--- | :--- | :--- |
-| [Portal de Projetos](./portal-projetos) | HTML, Tailwind, JS | Web / Institucional | Ativo |
+| [Portal de Projetos](./web-interfaces/portal-projetos/index.html) | HTML, Tailwind, JS | Web / Institucional | Ativo |
 | *Em breve* | - | - | - |
 
 ------
