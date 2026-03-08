@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Projetos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="flex min-h-screen bg-stone-50 dark:bg-neutral-950 transition-colors duration-300">
+    <aside class="hidden md:flex w-20 sticky top-0 h-screen bg-white dark:bg-neutral-900 border-r border-stone-200 dark:border-neutral-800 flex-col items-center py-8 shrink-0">
+        <nav class="flex flex-col items-center space-y-6">
+            <a href="index.html" class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+                <i data-lucide="home"></i>
+                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Início</span>
+            </a>
+            <a href="projetos.html" class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+                <i data-lucide="folder-kanban"></i>
+                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Projetos</span>
+            </a>
+            <a href="ideias.html" class="group relative cursor-pointer p-3 rounded-lg hover:bg-stone-100 dark:hover:bg-neutral-800 text-stone-600 dark:text-neutral-400 flex items-center">
+                <i data-lucide="lightbulb"></i>
+                <span class="absolute left-16 px-3 py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Ideias</span>
+            </a>
+        </nav>
+    </aside>
+    
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-neutral-900 border-t border-stone-200 dark:border-neutral-800 flex justify-around items-center py-2 px-1">
+        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
+            <i data-lucide="home" class="w-5 h-5"></i>
+            <span class="text-[10px]">Início</span>
+        </div>
+        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
+            <i data-lucide="folder-kanban" class="w-5 h-5"></i>
+            <span class="text-[10px]">Projetos</span>
+        </div>
+        </div>
+        <div class="cursor-pointer p-2 rounded-lg text-stone-500 dark:text-neutral-400 flex flex-col items-center gap-0.5">
+            <i data-lucide="lightbulb" class="w-5 h-5"></i>
+            <span class="text-[10px]">Ideias</span>
+        </div>
+    </nav>
+
+    <main class="flex-1 p-6 md:p-12 pb-24 md:pb-12 min-w-0">
+        <div class="max-w-4xl mx-auto"> 
+         
+            <div class="flex justify-between items-start mb-10">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-stone-900 dark:text-neutral-100 mb-2">Área para envio de ideias</h1>
+                    <p class="mt-4 text-stone-500 uppercase tracking-widest text-xs">
+                        “Às vezes, são as pessoas de quem ninguém espera nada, que fazem as coisas que ninguém consegue imaginar.” 
+                    </p>
+                    <p class="mt-1 text-stone-500 tracking-wides text-[10px]">
+                     - Alan Turing
+                    </p>
+                </div>
+
+                <button id="theme-toggle" aria-label="Alternar modo de cores" class="p-2 rounded-lg bg-white dark:bg-neutral-900 border border-stone-300 dark:border-neutral-700 hover:bg-stone-100 dark:hover:bg-neutral-800 transition-colors shrink-0 ml-4">
+                    <i data-lucide="sun" class="hidden dark:block w-5 h-5 text-neutral-300"></i>
+                    <i data-lucide="moon" class="dark:hidden w-5 h-5 text-stone-600"></i>
+                </button>
+            </div>
+
+            <!-- Seção de projetos 1 -->
+            <section class="mb-12">
+
+                <!-- Área de conteúdo de um dos projetos -->
+                <article class="bg-white dark:bg-neutral-900 rounded-2xl border border-stone-200 dark:border-neutral-800 shadow-sm mb-6 overflow-hidden">
+
+                    <!-- Cabeçalho do card -->
+                    <div class="p-6 pb-4">
+                        <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100 mb-3">
+                            Áreas de Interesse para Novos Projetos
+                        </h3>
+                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed mb-4">
+                            Estudantes interessados em desenvolver projetos de pesquisa, extensão ou TCC também podem propor trabalhos nas seguintes áreas:
+                        </p>
+                        
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 border-t border-stone-100 dark:border-neutral-800">
+
+                        <div class="p-6 border-b sm:border-b-0 sm:border-r border-stone-100 dark:border-neutral-800">
+                            <h4 class="text-xs font-semibold text-stone-500 dark:text-neutral-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                                <i data-lucide="send-horizontal" class="w-3.5 h-3.5 text-stone-400"></i> Inteligência Artificial
+                            </h4>
+                            <ul class="space-y-2 text-sm text-stone-600 dark:text-neutral-400">
+                                <li>Agentes de IA</li>
+                                <li>Automação com IA</li>
+                                <li>Automação com IA</li>
+                                <li>IA no agronegócio</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-6">
+                            <h4 class="text-xs font-semibold text-stone-500 dark:text-neutral-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                                <i data-lucide="send-horizontal" class="w-3.5 h-3.5 text-stone-400"></i> IA aplicada ao Meio Ambiente
+                            </h4>
+                            <ul class="space-y-2 text-sm text-stone-600 dark:text-neutral-400">
+                                <li>Sensoriamento remoto</li>
+                                <li>Análise de dados ambientais</li>
+                                <li>Monitoramento de mudanças ambientais</li>
+                                <li>Geoinformática</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 border-t border-stone-100 dark:border-neutral-800">  
+                        
+                        <div class="p-6 border-b sm:border-b-0 sm:border-r border-stone-100 dark:border-neutral-800">
+                            <h4 class="text-xs font-semibold text-stone-500 dark:text-neutral-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                                <i data-lucide="send-horizontal" class="w-3.5 h-3.5 text-stone-400"></i> AIOps
+                            </h4>
+                            <ul class="space-y-2 text-sm text-stone-600 dark:text-neutral-400">
+                                <li>Automação de operações de TI</li>
+                                <li>Monitoramento de sistemas</li>
+                                <li>Análise automatizada de logs</li>
+                            </ul>
+                        </div>
+                         
+                        <div class="p-6">
+                            <h4 class="text-xs font-semibold text-stone-500 dark:text-neutral-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                                <i data-lucide="send-horizontal" class="w-3.5 h-3.5 text-stone-400"></i> Jogos e Educação
+                            </h4>
+                            <ul class="space-y-2 text-sm text-stone-600 dark:text-neutral-400">
+                                <li>Metodologias ativas</li>
+                                <li>Gamificação</li>
+                                <li>Aprendizagem baseada em problemas</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </article>
+                
+                <article class="bg-white dark:bg-neutral-900 rounded-2xl border border-stone-200 dark:border-neutral-800 shadow-sm mb-6 overflow-hidden">
+
+                    <!-- Cabeçalho do card -->
+                    <div class="p-6 pb-4">
+                        <h3 class="font-bold text-lg text-stone-900 dark:text-neutral-100 mb-3">
+                            Ideias de Projetos
+                        </h3>
+                        <p class="text-stone-600 dark:text-neutral-400 text-sm leading-relaxed mb-4">
+                            Algumas ideias iniciais que podem evoluir para TCC, IC ou projetos de extensão incluem:
+                        </p>
+                        
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 border-t border-stone-100 dark:border-neutral-800">
+
+                        <div class="p-6 border-b sm:border-b-0 sm:border-r border-stone-100 dark:border-neutral-800">
+                            <h4 class="text-xs font-semibold text-stone-500 dark:text-neutral-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                                <i data-lucide="send-horizontal" class="w-3.5 h-3.5 text-stone-400"></i> Agente de IA para Automação de Redes Sociais
+                            </h4>
+                            <ul class="space-y-2 text-sm text-stone-600 dark:text-neutral-400">
+                                <li>Gerar conteúdos automaticamente</li>
+                                <li>Planejar postagens</li>
+                                <li>Automatizar publicação em redes sociais como Instagram</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-6">
+                            <h4 class="text-xs font-semibold text-stone-500 dark:text-neutral-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                                <i data-lucide="send-horizontal" class="w-3.5 h-3.5 text-stone-400"></i> IA para Desenvolvimento de Portais para Comércio Local
+                            </h4>
+                            <ul class="space-y-2 text-sm text-stone-600 dark:text-neutral-400">
+                                <li>Criar sites automaticamente</li>
+                                <li>Estruturar páginas de comércio</li>
+                                <li>Gerar conteúdos e descrições de produtos</li>
+                            </ul>
+                        </div>
+                    </div>
+          
+                </article>
+                
+                <article class="bg-white dark:bg-neutral-900 rounded-2xl border border-stone-200 dark:border-neutral-800 shadow-sm mb-6 hover:shadow-md transition-shadow">
+                    <div class="p-6">
+                        <a href="https://docs.google.com/document/d/1vnzDjfhcNqVNmNYb2Q8FrPpjvlal2drS5_d2Rqz1KY0/edit?tab=t.0" target="_blank" class="block text-center font-bold text-lg text-stone-900 dark:text-neutral-100 hover:text-gray-400 dark:hover:text-gray-400 transition-colors">
+                             Mande sua ideia aqui!
+                        </a>
+                    </div>
+                </article>
+
+            </section>    
+            
+            <footer class="mt-8 pt-6 border-t border-stone-200 dark:border-neutral-800 text-center text-xs text-stone-400 dark:text-neutral-600">
+                <p>© <span id="footer-year"></span> J. M. B.  — Universidade Estadual de Goiás - Polo Itaberaí</p>
+            </footer>
+
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        const btn = document.getElementById('theme-toggle');
+        btn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            lucide.createIcons();
+        });
+    </script>
+    
+</body>
