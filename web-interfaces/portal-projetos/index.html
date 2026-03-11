@@ -260,7 +260,8 @@
     <script>
         lucide.createIcons();
         document.getElementById('footer-year').textContent = new Date().getFullYear();
-
+ 
+        // Condição para manter o tema escolhido pelo usuario
         if (localStorage.getItem('tema') === 'dark') {
             document.documentElement.classList.add('dark');
         }
@@ -269,6 +270,7 @@
         btn.addEventListener('click', () => {
             document.documentElement.classList.toggle('dark');
 
+        // Salva o tema atual no navegador
         if (document.documentElement.classList.contains('dark')) {
             localStorage.setItem('tema', 'dark');
         } else {
