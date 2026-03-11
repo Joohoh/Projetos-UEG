@@ -261,9 +261,20 @@
         lucide.createIcons();
         document.getElementById('footer-year').textContent = new Date().getFullYear();
 
+        if (localStorage.getItem('tema') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+
         const btn = document.getElementById('theme-toggle');
         btn.addEventListener('click', () => {
             document.documentElement.classList.toggle('dark');
+
+        if (document.documentElement.classList.contains('dark')) {
+            localStorage.setItem('tema', 'dark');
+        } else {
+            localStorage.setItem('tema', 'light');
+        }  
+            
             lucide.createIcons();
         });
     </script>
