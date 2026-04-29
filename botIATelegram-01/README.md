@@ -2,6 +2,8 @@
 
 Este é um bot para Telegram construído em Python que funciona como um Assistente Virtual especializado no **Edital do Vestibular**. Ele lê o edital em PDF, entende o contexto e responde às dúvidas dos candidatos de forma inteligente e rápida.
 
+> **Acesse o bot agora:** [@JMB_01_ChatIABot](https://t.me/JMB_01_ChatIABot)
+
 ## 🛠️ Como Funciona? (Arquitetura)
 
 O projeto utiliza a técnica de **RAG (Retrieval-Augmented Generation)**. Ao invés de tentarmos "ensinar" (fazer fine-tuning) um modelo inteiro sobre o edital, nós damos a ele o dom da leitura e pesquisa em tempo real:
