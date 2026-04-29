@@ -1,4 +1,4 @@
-# 🎓 Agente IA do Vestibular (PDF RAG)
+# 🎓 Agente IA do Vestibular (PDF RAG) 
 
 Este é um bot para Telegram construído em Python que funciona como um Assistente Virtual especializado no **Edital do Vestibular**. Ele lê o edital em PDF, entende o contexto e responde às dúvidas dos candidatos de forma inteligente e rápida.
 
