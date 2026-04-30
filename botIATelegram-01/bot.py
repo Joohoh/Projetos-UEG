@@ -124,17 +124,17 @@ async def responder_pergunta(update: Update, context: ContextTypes.DEFAULT_TYPE)
             
         except Exception as e:
             erro = str(e).lower()
-            print(f"Erro (tentativa {tentativa}/{max_tentativas}): {str(e)}")
+            print(f"Erro (tentativa {tentativa}/{max_tentativas}): {str(e)}", flush=True)
             
             # Se for erro de formatação do Telegram (Markdown mal formado pela IA)
             if "entidade" in erro or "entity" in erro or "parse" in erro:
-                print("Erro de Markdown detectado! Enviando como texto puro...")
+                print("Erro de Markdown detectado! Enviando como texto puro...", flush=True)
                 # Tenta enviar de novo sem a formatação Markdown que causou o erro
                 try:
                     await update.message.reply_text(resposta)
                     return # Sucesso ao enviar como texto puro
                 except Exception as ex:
-                    print(f"Falhou mesmo como texto puro: {ex}")
+                    print(f"Falhou mesmo como texto puro: {ex}", flush=True)
             
             # Lista de possíveis termos de Rate Limit em várias APIs
             rate_limit_terms = ["429", "resource_exhausted", "rate_limit", "too many requests"]
@@ -143,11 +143,12 @@ async def responder_pergunta(update: Update, context: ContextTypes.DEFAULT_TYPE)
             if is_rate_limit:
                 if tentativa < max_tentativas:
                     espera = 20 * tentativa
-                    print(f"Rate limit - esperando {espera}s antes de tentar novamente...")
+                    print(f"Rate limit - esperando {espera}s antes de tentar novamente...", flush=True)
                     await update.message.chat.send_action("typing")
                     await asyncio.sleep(espera)
                     continue
             
+            print("Enviando mensagem de erro final para o usuário.", flush=True)
             # Se não é rate limit nem erro de markdown, ou se esgotou as tentativas de rate limit
             await update.message.reply_text(
                 "⚠️ Desculpe, ocorreu um erro ao processar sua pergunta. "
