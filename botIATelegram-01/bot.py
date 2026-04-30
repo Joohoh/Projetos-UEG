@@ -1,5 +1,6 @@
 import os
 import time
+import asyncio
 import threading
 from flask import Flask
 from dotenv import load_dotenv
@@ -122,15 +123,19 @@ async def responder_pergunta(update: Update, context: ContextTypes.DEFAULT_TYPE)
             return  # Sucesso, sai da função
             
         except Exception as e:
-            erro = str(e)
-            print(f"Erro (tentativa {tentativa}/{max_tentativas}): {erro}")
+            erro = str(e).lower()
+            print(f"Erro (tentativa {tentativa}/{max_tentativas}): {str(e)}")
             
-            if "429" in erro or "RESOURCE_EXHAUSTED" in erro:
+            # Lista de possíveis termos de Rate Limit em várias APIs
+            rate_limit_terms = ["429", "resource_exhausted", "rate_limit", "too many requests"]
+            is_rate_limit = any(term in erro for term in rate_limit_terms)
+            
+            if is_rate_limit:
                 if tentativa < max_tentativas:
                     espera = 20 * tentativa
                     print(f"Rate limit - esperando {espera}s antes de tentar novamente...")
                     await update.message.chat.send_action("typing")
-                    time.sleep(espera)
+                    await asyncio.sleep(espera)
                     continue
             
             # Se não é rate limit ou já esgotou tentativas
