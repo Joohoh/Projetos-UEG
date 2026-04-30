@@ -126,6 +126,16 @@ async def responder_pergunta(update: Update, context: ContextTypes.DEFAULT_TYPE)
             erro = str(e).lower()
             print(f"Erro (tentativa {tentativa}/{max_tentativas}): {str(e)}")
             
+            # Se for erro de formatação do Telegram (Markdown mal formado pela IA)
+            if "entidade" in erro or "entity" in erro or "parse" in erro:
+                print("Erro de Markdown detectado! Enviando como texto puro...")
+                # Tenta enviar de novo sem a formatação Markdown que causou o erro
+                try:
+                    await update.message.reply_text(resposta)
+                    return # Sucesso ao enviar como texto puro
+                except Exception as ex:
+                    print(f"Falhou mesmo como texto puro: {ex}")
+            
             # Lista de possíveis termos de Rate Limit em várias APIs
             rate_limit_terms = ["429", "resource_exhausted", "rate_limit", "too many requests"]
             is_rate_limit = any(term in erro for term in rate_limit_terms)
@@ -138,7 +148,7 @@ async def responder_pergunta(update: Update, context: ContextTypes.DEFAULT_TYPE)
                     await asyncio.sleep(espera)
                     continue
             
-            # Se não é rate limit ou já esgotou tentativas
+            # Se não é rate limit nem erro de markdown, ou se esgotou as tentativas de rate limit
             await update.message.reply_text(
                 "⚠️ Desculpe, ocorreu um erro ao processar sua pergunta. "
                 "Tente novamente em alguns segundos!"
